@@ -7,7 +7,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
-namespace EntityFCore.Repoitories
+namespace EntityFCore.Repositories
 {
     public class ProdutoRepository : IProdutoRepository
     {

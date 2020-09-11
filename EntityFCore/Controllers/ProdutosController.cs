@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using EntityFCore.Domais;
 using EntityFCore.Interfaces;
-using EntityFCore.Repoitories;
+using EntityFCore.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,40 +21,118 @@ namespace EntityFCore.Controllers
             _produtoRepository = new ProdutoRepository();
         }
 
-        
+        // GET: api/produtos
         [HttpGet]
-        public List<Produto> Get()
+        public IActionResult Get()
         {
-            return _produtoRepository.Listar();
+            try
+            {
+                //Lista os produtos
+                var produtos = _produtoRepository.Listar();
+
+                //Verifico se existe produto cadastrado
+                //Caso não exista eu retorno NoContent
+                if (produtos.Count == 0)
+                    return NoContent();
+
+                //Caso exista retorno Ok e os produtos cadastrados
+                return Ok(produtos);
+            }
+            catch (Exception ex)
+            {
+                //Caso ocorra algum erro retorno BadRequest e a mensagem da exception
+                return BadRequest(ex.Message);
+            }
         }
 
-        
+        // GET api/produtos/5
         [HttpGet("{id}")]
-        public Produto Get(Guid id)
+        public IActionResult Get(Guid id)
         {
-            return _produtoRepository.BuscarPorId(id);
+            try
+            {
+                //Busco o produto pelo Id
+                Produto produto = _produtoRepository.BuscarPorId(id);
+
+                //Verifico se o produto foi encontrado
+                //Caso não exista retorno NotFounf
+                if (produto == null)
+                    return NotFound();
+
+                //Caso exista retorno Ok e os dados do produto
+                return Ok(produto);
+            }
+            catch (Exception ex)
+            {
+                //Caso ocorra algum erro retorno BadRequest e a mensagem da exception
+                return BadRequest(ex.Message);
+            }
         }
 
-        
+        // POST api/produtos
         [HttpPost]
-        public void Post(Produto produto)
+        public IActionResult Post(Produto produto)
         {
-            _produtoRepository.Adicionar(produto);
+            try
+            {
+                //Adiciona um novo produto
+                _produtoRepository.Adicionar(produto);
+
+                //Retorna Ok caso o produto tenha sido cadastrado
+                return Ok(produto);
+            }
+            catch (Exception ex)
+            {
+                //Caso ocorra algum erro retorno BadRequest e a mensagem da exception
+                return BadRequest(ex.Message);
+            }
         }
 
-        
+        // PUT api/produtos/5
         [HttpPut("{id}")]
-        public void Put(Guid id, Produto produto)
+        public IActionResult Put(Guid id, Produto produto)
         {
-            produto.Id = id;
-            _produtoRepository.Editar(produto);
+            try
+            {
+                //Define o id do produto
+                produto.Id = id;
+                //Edita o id do produto
+                _produtoRepository.Editar(produto);
+
+                //Retorna com ok os dados do produto
+                return Ok(produto);
+            }
+            catch (Exception ex)
+            {
+                //Caso ocorra algum erro retorno BadRequest e a mensagem da exception
+                return BadRequest(ex.Message);
+            }
         }
 
-        
+        // DELETE api/produtos/5
         [HttpDelete("{id}")]
-        public void Delete(Guid id)
+        public IActionResult Delete(Guid id)
         {
-            _produtoRepository.Remover(id);
+            try
+            {
+                //Busca o produto pelo Id
+                var produto = _produtoRepository.BuscarPorId(id);
+
+                //Verifica se produto existe
+                //Caso não exista retorna NotFound
+                if (produto == null)
+                    return NotFound();
+
+                //Caso exista remove o produto
+                _produtoRepository.Remover(id);
+                //Retorna Ok
+                return Ok(id);
+            }
+            catch (Exception ex)
+            {
+                //Caso ocorra algum erro retorno BadRequest e a mensagem da exception
+                return BadRequest(ex.Message);
+            }
         }
 
     }

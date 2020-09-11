@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="EntityFCore\**" />
+    <Content Remove="EntityFCore\**" />
+    <EmbeddedResource Remove="EntityFCore\**" />
+    <None Remove="EntityFCore\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Migrations\20200909225422_AlterTableId.cs" />
     <Compile Remove="Migrations\20200909225422_AlterTableId.Designer.cs" />
   </ItemGroup>
