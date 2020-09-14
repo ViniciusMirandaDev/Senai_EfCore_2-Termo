@@ -40,8 +40,12 @@ namespace EntityFCore.Controllers
             }
             catch (Exception ex)
             {
-                //Caso ocorra algum erro retorno BadRequest e a mensagem da exception
-                return BadRequest(ex.Message);
+                //TODO : Cadastrar mensagem de erro no domínio LogErro
+                // Mensagem personalizada
+                return BadRequest(new {
+                    StatusCode=400,
+                    error = "Ocorreu um erro no endpooit Get/produtos, envie um e-mail para email@email.com informando."
+                });
             }
         }
 
@@ -94,8 +98,6 @@ namespace EntityFCore.Controllers
         {
             try
             {
-                //Define o id do produto
-                produto.Id = id;
                 //Edita o id do produto
                 _produtoRepository.Editar(produto);
 

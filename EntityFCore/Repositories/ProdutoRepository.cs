@@ -135,9 +135,6 @@ namespace EntityFCore.Repositories
                 Produto produtoTemp = BuscarPorId(id);
 
                 //Verifica se o produto existe
-                //Caso não exista ele gera uma exception
-                if (produtoTemp == null)
-                    throw new Exception("Produto não encontrado");
 
                 //Remove os produtos do dbSet
                 _ctx.Produtos.Remove(produtoTemp);

@@ -9,7 +9,8 @@ namespace EntityFCore.Domais
     public abstract class BaseDomain
     {
         [Key]
-        public Guid Id { get; set; }
+        //Definir o set como private, para  que ele não seja alterado em outros lugares(Importante!!)
+        public Guid Id { get; private set; }
 
         public BaseDomain()
         {
