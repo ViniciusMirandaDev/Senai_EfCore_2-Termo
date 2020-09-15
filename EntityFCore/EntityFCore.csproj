@@ -32,6 +32,7 @@
 
   <ItemGroup>
     <Folder Include="Scripts\" />
+    <Folder Include="wwwRoot\upload\imagens\" />
   </ItemGroup>
 
 

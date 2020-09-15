@@ -60,11 +60,10 @@ namespace EntityFCore.Repositories
         {
             try
             {
-                
                 return _ctx.Pedidos
                     .Include(c => c.PedidosItens)
                     .ThenInclude(c => c.Produto)
-                    .FirstOrDefault(p => p.Id == id);//Fazemos um Inner Join [
+                    .FirstOrDefault(p => p.Id == id);//Fazemos um Inner Join 
             }
             catch (Exception ex)
             {

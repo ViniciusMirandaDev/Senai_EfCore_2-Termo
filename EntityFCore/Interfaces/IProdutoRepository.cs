@@ -8,6 +8,7 @@ namespace EntityFCore.Interfaces
 {
     interface IProdutoRepository
     {
+        ///
         List<Produto> Listar();
         List<Produto> BuscarPorNome(string nome);
         Produto BuscarPorId(Guid id);

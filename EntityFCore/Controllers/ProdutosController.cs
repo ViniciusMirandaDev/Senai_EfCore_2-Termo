@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using EntityFCore.Domais;
 using EntityFCore.Interfaces;
 using EntityFCore.Repositories;
+using EntityFCore.Utils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -75,10 +77,17 @@ namespace EntityFCore.Controllers
 
         // POST api/produtos
         [HttpPost]
-        public IActionResult Post(Produto produto)
+        public IActionResult Post([FromForm]Produto produto)
         {
             try
             {
+                if(produto.Imagem != null)
+                {
+                    var urlImagem = Upload.Local(produto.Imagem);
+
+                    produto.UrlImagem = urlImagem;
+                }
+
                 //Adiciona um novo produto
                 _produtoRepository.Adicionar(produto);
 

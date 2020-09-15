@@ -11,7 +11,7 @@ namespace EntityFCore.Interfaces
         /// <summary>
         /// Adiciona um novo pedido
         /// </summary>
-        /// <param name="pedidosItens">Itens di pedido</param>
+        /// <param name="pedidosItens">Itens do pedido</param>
         /// <returns>Pedido</returns>
         Pedido Adicionar(List<PedidoItem> pedidosItens);
         

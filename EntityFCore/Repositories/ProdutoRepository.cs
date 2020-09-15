@@ -124,7 +124,7 @@ namespace EntityFCore.Repositories
         }
 
         /// <summary>
-        /// Remoce um produto
+        /// Remove um produto
         /// </summary>
         /// <param name="id">Id do Produto</param>
         public void Remover(Guid id)
