@@ -9,8 +9,11 @@ using Microsoft.Extensions.Logging;
 
 namespace EntityFCore
 {
+    // O código de aviso CS1591 é ignorado para toda a Program classe.
+    #pragma warning disable CS1591
     public class Program
     {
+        
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
@@ -23,4 +26,5 @@ namespace EntityFCore
                     webBuilder.UseStartup<Startup>();
                 });
     }
+    #pragma warning restore CS1591
 }

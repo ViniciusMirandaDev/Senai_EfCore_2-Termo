@@ -23,7 +23,10 @@ namespace EntityFCore.Controllers
             _produtoRepository = new ProdutoRepository();
         }
 
-        // GET: api/produtos
+        /// <summary>
+        /// Mostra todos os produtos cadastrados
+        /// </summary>
+        /// <returns>Lista com todos os produtos cadastrados</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -38,7 +41,11 @@ namespace EntityFCore.Controllers
                     return NoContent();
 
                 //Caso exista retorno Ok e os produtos cadastrados
-                return Ok(produtos);
+                return Ok(new
+                {
+                    totalCount = produtos.Count(),
+                    data = produtos
+                });
             }
             catch (Exception ex)
             {
@@ -52,6 +59,11 @@ namespace EntityFCore.Controllers
         }
 
         // GET api/produtos/5
+        /// <summary>
+        /// Cadastra um novo produto
+        /// </summary>
+        /// <param name="id">ID do produto</param>
+        /// <returns>Um produto</returns>
         [HttpGet("{id}")]
         public IActionResult Get(Guid id)
         {
@@ -76,6 +88,11 @@ namespace EntityFCore.Controllers
         }
 
         // POST api/produtos
+        /// <summary>
+        /// Cadastra um novo produto
+        /// </summary>
+        /// <param name="produto">Objeto completo de Produto</param>
+        /// <returns>Produto cadastrado</returns>
         [HttpPost]
         public IActionResult Post([FromForm]Produto produto)
         {
@@ -102,6 +119,12 @@ namespace EntityFCore.Controllers
         }
 
         // PUT api/produtos/5
+        /// <summary>
+        /// Altera determinado produto
+        /// </summary>
+        /// <param name="id">ID do produto</param>
+        /// <param name="produto">Objeto Produto com as alterações</param>
+        /// <returns>Info do produto alterado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, Produto produto)
         {
@@ -121,6 +144,11 @@ namespace EntityFCore.Controllers
         }
 
         // DELETE api/produtos/5
+        /// <summary>
+        /// Exclui um produto
+        /// </summary>
+        /// <param name="id">ID do produto</param>
+        /// <returns>ID excluidp</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {

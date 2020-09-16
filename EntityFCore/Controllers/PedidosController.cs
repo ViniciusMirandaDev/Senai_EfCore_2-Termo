@@ -41,7 +41,7 @@ namespace EntityFCore.Controllers
             }
         }
 
-        // GET: api/<PedidosController>
+        
         [HttpGet("{id}")]
         public IActionResult GetById(Guid id)
         {
@@ -55,13 +55,13 @@ namespace EntityFCore.Controllers
                 return Ok(pedido);
 
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 return BadRequest(ex.Message);
             }
         }
 
-        // POST api/<PedidosController>
+    
         [HttpPost]
         public IActionResult Post(List<PedidoItem> pedidosItens)
         {

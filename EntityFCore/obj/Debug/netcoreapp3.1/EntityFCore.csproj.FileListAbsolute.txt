@@ -60,5 +60,12 @@ C:\Users\fic\Documents\Lições- VInícius Miranda-Dev\Senai_EfCore_2-Termo\Enti
 C:\Users\fic\Documents\Lições- VInícius Miranda-Dev\Senai_EfCore_2-Termo\EntityFCore\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\fic\Documents\Lições- VInícius Miranda-Dev\Senai_EfCore_2-Termo\EntityFCore\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\fic\Documents\Lições- VInícius Miranda-Dev\Senai_EfCore_2-Termo\EntityFCore\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\fic\Documents\Lições- VInícius Miranda-Dev\Senai_EfCore_2-Termo\EntityFCore\bin\Debug\netcoreapp3.1\EntityFCore.xml
+C:\Users\fic\Documents\Lições- VInícius Miranda-Dev\Senai_EfCore_2-Termo\EntityFCore\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\fic\Documents\Lições- VInícius Miranda-Dev\Senai_EfCore_2-Termo\EntityFCore\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\fic\Documents\Lições- VInícius Miranda-Dev\Senai_EfCore_2-Termo\EntityFCore\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\fic\Documents\Lições- VInícius Miranda-Dev\Senai_EfCore_2-Termo\EntityFCore\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\fic\Documents\Lições- VInícius Miranda-Dev\Senai_EfCore_2-Termo\EntityFCore\obj\Debug\netcoreapp3.1\EntityFCore.csproj.CoreCompileInputs.cache
+C:\Users\fic\Documents\Lições- VInícius Miranda-Dev\Senai_EfCore_2-Termo\EntityFCore\obj\Debug\netcoreapp3.1\EntityFCore.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\fic\Documents\Lições- VInícius Miranda-Dev\Senai_EfCore_2-Termo\EntityFCore\obj\Debug\netcoreapp3.1\EntityFCore.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\fic\Documents\Lições- VInícius Miranda-Dev\Senai_EfCore_2-Termo\EntityFCore\obj\Debug\netcoreapp3.1\EntityFCore.xml

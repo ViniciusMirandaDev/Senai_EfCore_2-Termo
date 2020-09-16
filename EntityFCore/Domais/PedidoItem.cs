@@ -15,6 +15,7 @@ namespace EntityFCore.Domais
         public Guid IdProduto { get; set; }
         [ForeignKey("IdProduto")]
         public Produto Produto { get; set; }
+
         [Required]
         public int Quantidade { get; set; }
     }

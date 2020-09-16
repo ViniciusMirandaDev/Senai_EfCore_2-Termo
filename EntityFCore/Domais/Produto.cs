@@ -14,12 +14,15 @@ namespace EntityFCore.Domais
     {
         public string Nome { get; set; }
         public float Preco { get; set; }
+
         //Usada para receber o arquivo
         [NotMapped]
         [JsonIgnore]
         public IFormFile Imagem { get; set; }
+
         //Url da imagem salva localmente
         public string UrlImagem { get; set; }
+
         public List<PedidoItem> PedidoItens { get; set; }
     }
 }

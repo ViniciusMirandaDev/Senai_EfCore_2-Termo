@@ -16,5 +16,10 @@ namespace EntityFCore.Domais
         {
             Id = Guid.NewGuid();
         }
+
+        public void setId(Guid id)
+        {
+            id = Id;
+        }
     }
 }

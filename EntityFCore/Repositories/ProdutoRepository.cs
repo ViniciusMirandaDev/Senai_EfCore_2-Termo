@@ -134,8 +134,6 @@ namespace EntityFCore.Repositories
                 //Busca o produto pelo seu Id
                 Produto produtoTemp = BuscarPorId(id);
 
-                //Verifica se o produto existe
-
                 //Remove os produtos do dbSet
                 _ctx.Produtos.Remove(produtoTemp);
                 //Salva as alterações
@@ -143,6 +141,7 @@ namespace EntityFCore.Repositories
             }
             catch (Exception ex)
             {
+                //TODO : Incluir erro na tabela de Log
                 //Mostra a mensagem de erro
                 throw new Exception(ex.Message);
             }
