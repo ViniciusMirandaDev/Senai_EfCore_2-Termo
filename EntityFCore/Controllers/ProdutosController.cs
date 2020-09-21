@@ -73,12 +73,19 @@ namespace EntityFCore.Controllers
                 Produto produto = _produtoRepository.BuscarPorId(id);
 
                 //Verifico se o produto foi encontrado
-                //Caso não exista retorno NotFounf
+                //Caso não exista retorno NotFound
                 if (produto == null)
                     return NotFound();
 
+                // Instaciamos a classe moeda
+                Moeda dolar = new Moeda();
+
                 //Caso exista retorno Ok e os dados do produto
-                return Ok(produto);
+                return Ok(new { 
+                    produto,
+                    // Dizemos o valor do produto em Dólar, realizando uma operação entre o valor em real e em dólar
+                    valorDolar = produto.Preco / dolar.GetDolarValue()
+                });
             }
             catch (Exception ex)
             {

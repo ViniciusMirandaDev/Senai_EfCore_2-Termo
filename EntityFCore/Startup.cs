@@ -30,7 +30,7 @@ namespace EntityFCore
             services.AddControllers().AddNewtonsoftJson(options => {
                 //Ignorar o erro de Loop 
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-                options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+                options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;    
             });
 
             // Adicionamos o método necessário para a criação do Swagger na aplicação
